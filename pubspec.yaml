@@ -38,7 +38,6 @@ dependencies:
   url_launcher: ^6.3.2
   provider: ^6.1.5+1
   lottie: ^3.1.0
-  flutter_launcher_icons: ^0.13.1
   flutter_tts: ^4.0.0
   speech_to_text: ^7.0.0
   shared_preferences: ^2.2.2
@@ -53,11 +52,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
 
 flutter_launcher_icons:
   android: true
   ios: false
-  image_path: "assets/images/chatbot.png"
+  image_path: "assets/images/bot.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -74,7 +74,7 @@ flutter:
   assets:
     - assets/chatbotnew.json
     - assets/mic_wave.json
-    - assets/images/chatbot.png
+    - assets/images/bot.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

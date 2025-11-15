@@ -128,7 +128,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/chatbot.png', width: 120),
+            Image.asset('assets/images/bot.png', width: 120),
             const SizedBox(height: 20),
             const Text("Personal AI Chatbot",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
@@ -260,7 +260,7 @@ class _ChatScreenState extends State<ChatScreen> {
   };
 
 
-  static const String _localEmulatorUrl = 'http://10.159.169.38:10000/chatbot';
+  static const String _localEmulatorUrl = 'https://assistant-backend-render.onrender.com/chatbot';
   static const String _renderApiUrl = _localEmulatorUrl;
 
 
@@ -633,22 +633,24 @@ class _ChatScreenState extends State<ChatScreen> {
             if (!msg.isUser && msg.options.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
-                child: Wrap(
-                  spacing: 8.0,
-                  runSpacing: 4.0,
-                  children: msg.options.map((optionText) {
-                    return ActionChip(
-                      label: Text(optionText,
-                          style: TextStyle(
-                            // Ensure Action Chip text color is legible
-                              color: textColor)),
-                      backgroundColor:
-                      isDark ? Colors.blueGrey.shade800 : lightBotMessageColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                      onPressed: () => _sendMessage(optionText),
-                    );
-                  }).toList(),
+                child: Center(
+                  child: Wrap(
+                    spacing: 5.0,
+                    runSpacing: 4.0,
+                    children: msg.options.map((optionText) {
+                      return ActionChip(
+                        label: Text(optionText,
+                            style: TextStyle(
+                              // Ensure Action Chip text color is legible
+                                color: textColor)),
+                        backgroundColor:
+                        isDark ? Colors.blueGrey.shade800 : lightBotMessageColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        onPressed: () => _sendMessage(optionText),
+                      );
+                    }).toList(),
+                  ),
                 ),
               ),
           ],
